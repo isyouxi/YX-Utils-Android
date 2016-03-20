@@ -1,24 +1,24 @@
-package com.okeytime.hongan_guards.utils;
+package xyz.isyouxi.utils;
 
 import android.util.Log;
 
 /**
- * 關於日誌的工具類
+ * 关于打印日志的工具类
  * @author isyouxi
  */
 public class YXLog {
 	/**
-	 * 是否顯示log
+	 * 是否显示Log
 	 */
 	public static boolean isShow = true; 
 	/**
-	 * 自定義的tag配置
+	 * 自定义的tag配置
 	 * 如果這個是null的話，會使用自動生成的tag的方式
 	 */
 	public static String customTagPrefix = null;
 	
 	/**
-	 * 輸出D級別的Log
+	 * 输出D级别的Log
 	 * @param content
 	 */
 	public static void d(String content) {
@@ -26,7 +26,7 @@ public class YXLog {
 		Log.d(generateTag(),content);
     }
 	/**
-	 * 輸出E級別的Log
+	 * 输出E级别的Log
 	 * @param content
 	 */
 	public static void e(String content) {
@@ -34,7 +34,7 @@ public class YXLog {
 		Log.e(generateTag(),content);
     }
 	/**
-	 * 輸出I級別的Log
+	 * 输出I级别的Log
 	 * @param content
 	 */
 	public static void i(String content) {
@@ -42,7 +42,7 @@ public class YXLog {
 		Log.i(generateTag(),content);
     }
 	/**
-	 * 輸出W級別的Log
+	 *输出W级别的Log
 	 * @param content
 	 */
 	public static void w(String content) {
@@ -50,7 +50,7 @@ public class YXLog {
 		Log.w(generateTag(),content);
 	}
 	/**
-	 * 輸出V級別的Log
+	 * 输出V级别的Log
 	 * @param content
 	 */
 	public static void v(String content) {
@@ -65,9 +65,9 @@ public class YXLog {
 		if (customTagPrefix != null) return customTagPrefix;
 		StackTraceElement caller = Thread.currentThread().getStackTrace()[4];
 		String tag = "%s.%s(L:%d)";
-        String callerClazzName = caller.getClassName();
-        callerClazzName = callerClazzName.substring(callerClazzName.lastIndexOf(".") + 1);
-        tag = String.format(tag, callerClazzName, caller.getMethodName(), caller.getLineNumber());
+        	String callerClazzName = caller.getClassName();
+        	callerClazzName = callerClazzName.substring(callerClazzName.lastIndexOf(".") + 1);
+        	tag = String.format(tag, callerClazzName, caller.getMethodName(), caller.getLineNumber());
 		return tag;
 	}
 }
